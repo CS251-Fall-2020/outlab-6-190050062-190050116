@@ -1,0 +1,92 @@
+html {
+  min-height:100%;
+  font-family:'Roboto', sans-serif ;
+}
+
+.container{
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+
+
+.title{
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #FF8F00;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+
+
+input[type="text"],
+input[type="email"]{
+  padding: 10px 20px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  outline: none;
+
+  &:focus{
+    border-color: #FF6F00;
+  }
+}
+
+
+input[type="radio"]{
+  margin-right: 10px;
+}
+
+.head{
+  margin-bottom: 20px;
+  display: block;
+  font-size: 18px;
+  color: #666;
+  //border-top: 1px solid #ddd;
+  //border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  cursor: pointer;
+
+
+}
+
+.option{
+  font-size: 18px;
+  color: #666;
+  padding: 20px 0;
+}
+
+button{
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: #FF6F00;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover{
+    background: darken(#FF6F00, 5%);
+  }
+}
+
+textarea
+{
+    height:150px;
+    width:600px;
+    font-size:14pt;
+}
+
+
+
+
+
+
+

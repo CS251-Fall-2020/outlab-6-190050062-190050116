@@ -1,33 +1,33 @@
-<h1>Please fill this feedback form!</h1>
+<h1 class="title">Please fill this feedback form!</h1>
 <div class='container'>
   <form [formGroup]="feedbackForm" (ngSubmit)="submit()">
-    <label for="Name">Name:</label><br />
+    <label for="Name" class="head">Name:</label><br />
     <input type="text" formControlName="name" required /><br />
-    <label for="Email">Email:</label><br />
+    <label for="Email" class="head">Email:</label><br />
     <input type="email" formControlName="email" required /><br />
-    <label for="Feedback">Feedback:</label><br />
+    <label for="Feedback" class="head">Feedback:</label><br />
     <input
       type="radio"
       value="Great"
       formControlName="feedback"
       [checked]="value.feedback == 'Good' ? true : false"
     />
-    <label for="Great">Great</label><br />
+    <label for="Great" class="option">Great</label><br />
     <input
       type="radio"
       value="Okay"
       formControlName="feedback"
       [checked]="value.feedback == 'Okay' ? true : false"
     />
-    <label for="Okay">Okay</label><br />
+    <label for="Okay" class="option">Okay</label><br />
     <input
       type="radio"
       value="Not good"
       formControlName="feedback"
       [checked]="value.feedback == 'Not good' ? true : false"
     />
-    <label for="Not good">Not good</label><br />
-    <label for="Comments">Comments:</label><br />
+    <label for="Not good" class="option">Not good</label><br />
+    <label for="Comments" class="head">Comments:</label><br />
     <textarea formControlName="comment"></textarea><br />
     <button type="submit">Submit</button>
   </form>
