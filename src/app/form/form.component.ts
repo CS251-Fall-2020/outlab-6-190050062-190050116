@@ -11,26 +11,26 @@ import { GetPostService } from '../get-post.service';
 })
 export class FormComponent implements OnInit {
 
-  constructor(private getpost : GetPostService) { }
+  constructor(private getpost: GetPostService) { }
 
   ngOnInit(): void {
     this.getInitialValues();
   }
 
-    value : Form = {name:'',email:'',feedback:'',comment:''};
+  value: Form = { name: '', email: '', feedback: '', comment: '' };
 
-  getInitialValues() :void{
-    this.getpost.getInitialValues().subscribe(value => this.value = value);
-    }
+  getInitialValues(): void {
+    this.getpost.getInitialValues().subscribe(value => this.feedbackForm.patchValue(value));
+  }
 
   feedbackForm = new FormGroup({
-    name : new FormControl('',Validators.required),
-    email : new FormControl('',Validators.required),
-    feedback : new FormControl('',Validators.required),
-    comment : new FormControl('')
+    name: new FormControl(''),
+    email: new FormControl(''),
+    feedback: new FormControl(''),
+    comment: new FormControl('')
   })
 
   submit() {
-  alert(this.feedbackForm.value);
-}
+    this.getpost.getUpdatedValues(this.feedbackForm.value).subscribe(value => { this.value = value });
+  }
 }
