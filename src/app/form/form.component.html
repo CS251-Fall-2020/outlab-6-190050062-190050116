@@ -1,23 +1,41 @@
 <h1>Please fill this feedback form!</h1>
-<form [formGroup]="feedbackForm" (ngSubmit)="submit()">
-    <label for="Name">Name:</label><br>
-    <input type="text" formControlName="name" value={{value.name}} required><br>
-    <label for="Email">Email:</label><br>
-    <input type="email" formControlName="email" value={{value.email}} required><br>
-    <label for="Feedback">Feedback:</label><br>
-    <input type="radio" value="Great" formControlName="feedback" [checked]="value.feedback == 'Good'?true:false">
-    <label for="Great">Great</label><br>
-    <input type="radio" value="Okay" formControlName="feedback" [checked]="value.feedback == 'Okay'?true:false">
-    <label for="Okay">Okay</label><br>
-    <input type="radio" value="Not good" formControlName="feedback" [checked]="value.feedback == 'Not good'?true:false">
-    <label for="Not good">Not good</label><br>
-    <label for="Comments">Comments:</label><br>
-    <textarea formControlName="comment" value={{value.comment}}></textarea><br>
-    <button type="submit" [disabled]="!feedbackForm.valid">Submit</button>
-</form>
-
-
-<p>
-    Form Status: {{ feedbackForm.status }}
-</p>
-
+<div class='container'>
+  <form [formGroup]="feedbackForm" (ngSubmit)="submit()">
+    <label for="Name">Name:</label><br />
+    <input type="text" formControlName="name" required /><br />
+    <label for="Email">Email:</label><br />
+    <input type="email" formControlName="email" required /><br />
+    <label for="Feedback">Feedback:</label><br />
+    <input
+      type="radio"
+      value="Great"
+      formControlName="feedback"
+      [checked]="value.feedback == 'Good' ? true : false"
+    />
+    <label for="Great">Great</label><br />
+    <input
+      type="radio"
+      value="Okay"
+      formControlName="feedback"
+      [checked]="value.feedback == 'Okay' ? true : false"
+    />
+    <label for="Okay">Okay</label><br />
+    <input
+      type="radio"
+      value="Not good"
+      formControlName="feedback"
+      [checked]="value.feedback == 'Not good' ? true : false"
+    />
+    <label for="Not good">Not good</label><br />
+    <label for="Comments">Comments:</label><br />
+    <textarea formControlName="comment"></textarea><br />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div>
+  <p>Feedback Response</p>
+  {{ value.name }}<br />
+  {{ value.email }}<br />
+  {{ value.feedback }}<br />
+  {{ value.comment }}
+</div>
